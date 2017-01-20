@@ -1,0 +1,11 @@
+.main-body-content {
+    background-color: lightblue;
+}
+
+#codeCanvas{
+    height: 200px;
+    width: 100%;
+    background-color: blue;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

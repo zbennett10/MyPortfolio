@@ -1,11 +1,6 @@
-.main-body-content {
+#canvasHolder {
     background-color: lightblue;
+    height: 250px;
+    width: 700px;
 }
 
-#codeCanvas{
-    height: 200px;
-    width: 100%;
-    background-color: blue;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}

@@ -30,8 +30,12 @@ function createCamera() {
 }
 
 function createRenderer() {
-    renderer = new THREE.WebGLRenderer();
+    renderer = new THREE.WebGLRenderer({
+        antialias: true,
+        alpha: true
+    });
     renderer.setSize(width, height);
+    renderer.setClearColor(0xffffff, 1);
 }
 
 function loadCodeGraphic() {
@@ -46,7 +50,8 @@ function loadCodeGraphic() {
 }
 
 function letThereBeLight() {
-    const lights = new THREE.AmbientLight(0xffffff);
+    //const lights = new THREE.AmbientLight(0xffffff);
+    const lights = new THREE.HemisphereLight( 0xffffbb, 0x080820, 1 );
     scene.add(lights);
 }
 
@@ -58,7 +63,6 @@ function animateCode() {
        codeGraphic.position.y = -1.35;
        scene.add(codeGraphic);
      }
-
 }
 
 function render() {

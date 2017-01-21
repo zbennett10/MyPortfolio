@@ -1,36 +1,58 @@
 
 
 const holder = document.getElementById('canvasHolder');
+let codeGraphic, scene, camera, renderer, controls;
+const width = 1000;
+const height = 250;
+
 
 window.onload = function() {
-    attachRenderer();
+    init();
 }
 
-function attachRenderer() {
-const renderer = new THREE.WebGLRenderer();
-renderer.setSize(1000, 250);
-holder.appendChild(renderer.domElement);
+function init() {
+    scene = new THREE.Scene();
+    createCamera();
+    createRenderer();
+    letThereBeLight();
+    loadCodeGraphic();
 
-const camera = new THREE.PerspectiveCamera(45, 1000 / 250, 1, 500);
-camera.position.set(0,0,100);
-camera.lookAt(new THREE.Vector3(150,0,0));
-const scene = new THREE.Scene();
+    controls = new THREE.OrbitControls(camera, render.domElement);
+    console.log(controls);
+    holder.appendChild(renderer.domElement);  
+}
 
-const material = new THREE.LineBasicMaterial({color: 0x00ff00});
-const geometry = new THREE.Geometry();
-geometry.vertices.push(new THREE.Vector3(0,0,0));
-//geometry.vertices.push(new THREE.Vector3(0,10,0));
-geometry.vertices.push(new THREE.Vector3(0,10,0));
-geometry.vertices.push(new THREE.Vector3(-1,7,0));
+function createCamera() {
+    camera = new THREE.PerspectiveCamera(5, width/height, 1, 500);
+    camera.position.set(0,0,150);
+    camera.lookAt(scene.position);
+    
+}
 
-const line = new THREE.Line(geometry, material);
-scene.add(line);
-renderer.render(scene, camera);
+function createRenderer() {
+    renderer = new THREE.WebGLRenderer();
+    renderer.setSize(width, height);
+}
+
+function loadCodeGraphic() {
+    const loader = new THREE.JSONLoader();
+    loader.load("codeGraphic.json", function(geometry, materials) {
+        codeGraphic = new THREE.Mesh(geometry, new THREE.MultiMaterial(materials));
+        scene.add(codeGraphic);
+    });
+    render();
+}
+
+function letThereBeLight() {
+    const lights = new THREE.AmbientLight(0xffffff);
+    scene.add(lights);
+}
 
 function render() {
     requestAnimationFrame(render);
     renderer.render(scene, camera);
 }
 
-render();
-}
+
+
+

@@ -1,6 +1,5 @@
 
-//fiz camera zoom to where one line of code covers the screen
-
+//global configuration
 const holder = document.getElementById('canvasHolder');
 let codeGraphic, scene, camera, renderer, controls;
 const width = 1000;
@@ -11,6 +10,7 @@ window.onload = function() {
     init();
 }
 
+//initalize scene and appends it to DOM
 function init() {
     scene = new THREE.Scene();
     createCamera();
@@ -50,13 +50,11 @@ function loadCodeGraphic() {
 }
 
 function letThereBeLight() {
-    //const lights = new THREE.AmbientLight(0xffffff);
     const lights = new THREE.HemisphereLight( 0xffffbb, 0x080820, 1 );
     scene.add(lights);
 }
 
 function animateCode() {
-    //codeGraphic.position.y -= 0.001;
     codeGraphic.position.y -= 0.005;
      if(codeGraphic.position.y < -10.95) {
        scene.remove(scene.children[1]);
@@ -69,9 +67,3 @@ function render() {
     requestAnimationFrame(render);
     renderer.render(scene, camera);
 }
-
-
-
-
-
-

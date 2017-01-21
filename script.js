@@ -38,7 +38,7 @@ function loadCodeGraphic() {
     const loader = new THREE.JSONLoader();
     loader.load("codeGraphic.json", function(geometry, materials) {
         codeGraphic = new THREE.Mesh(geometry, new THREE.MultiMaterial(materials));
-        codeGraphic.position.set(.5, -6.35, 0);
+        codeGraphic.position.set(.5, -1.35, 0);
         scene.add(codeGraphic);
     });
     setInterval(animateCode, 10);
@@ -53,9 +53,9 @@ function letThereBeLight() {
 function animateCode() {
     //codeGraphic.position.y -= 0.001;
     codeGraphic.position.y -= 0.005;
-     if(codeGraphic.position.y < -10.5) {
+     if(codeGraphic.position.y < -10.95) {
        scene.remove(scene.children[1]);
-       codeGraphic.position.y = -6.35;
+       codeGraphic.position.y = -1.35;
        scene.add(codeGraphic);
      }
 

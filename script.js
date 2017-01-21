@@ -19,7 +19,6 @@ function init() {
     loadCodeGraphic();
 
     //controls = new THREE.OrbitControls(camera, render.domElement);
-    console.log(controls);
     holder.appendChild(renderer.domElement);  
 }
 
@@ -42,12 +41,17 @@ function loadCodeGraphic() {
         codeGraphic.position.set(.5, -6.35, 0);
         scene.add(codeGraphic);
     });
+    setInterval(animateCode, 10);
     render();
 }
 
 function letThereBeLight() {
     const lights = new THREE.AmbientLight(0xffffff);
     scene.add(lights);
+}
+
+function animateCode() {
+    codeGraphic.position.y -= 0.001;
 }
 
 function render() {

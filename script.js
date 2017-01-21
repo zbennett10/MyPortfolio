@@ -51,7 +51,14 @@ function letThereBeLight() {
 }
 
 function animateCode() {
-    codeGraphic.position.y -= 0.001;
+    //codeGraphic.position.y -= 0.001;
+    codeGraphic.position.y -= 0.005;
+     if(codeGraphic.position.y < -10.5) {
+       scene.remove(scene.children[1]);
+       codeGraphic.position.y = -6.35;
+       scene.add(codeGraphic);
+     }
+
 }
 
 function render() {

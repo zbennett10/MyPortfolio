@@ -55,8 +55,35 @@
             </p>
         </div>
 
-        <div id="portfolio-container">
+        <div id="portfolio-container" class="carousel slide" data-interval="3000">
+            <ol class="carousel-indicators">
+                <li data-target="#portfolio-container" data-slide-to="0" class="active"></li>
+                <li data-target="#portfolio-container" data-slide-to="1"></li>
+                <li data-target="#portfolio-container" data-slide-to="2"></li>
+                <li data-target="#portfolio-container" data-slide-to="3"></li>
+            </ol>
 
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img src="assets/flower1.png"/>
+                </div>
+
+                <div class="item">
+                    <img src="assets/flower2.ico"/>
+                </div>
+
+                <div class="item">
+                    <img src="assets/flower3.png"/>
+                </div>
+            </div>
+
+            <!-- controls for carousel -->
+            <a class="left carousel-control" href="#portfolio-container" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            </a>
+            <a class="right carousel-control" href="#portfolio-container" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            </a>
         </div>
 
         <div id="contact-container">
@@ -92,14 +119,14 @@
             portfolioLink.addEventListener('click', function() {
                 bioContainer.style.display = 'none';
                 contactContainer.style.display = 'none';
-                portfolioContainer.style.display = 'display';
+                portfolioContainer.style.display = 'block';
                 mainContainer.appendChild(portfolioContainer);
             });
 
             contactLink.addEventListener('click', function() {
                 bioContainer.style.display = 'none';
                 portfolioContainer.style.display = 'none';
-                contactContainer.style.display = 'display';
+                contactContainer.style.display = 'block';
                 mainContainer.appendChild(contactContainer);
             });
 

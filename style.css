@@ -41,6 +41,24 @@ header {
     left: 21.5%;
 }
 
+#contact-container {
+    display: none;
+    position: absolute;
+    top: 25%;
+    left: 39%;
+    width: 400px;
+}
+
+#contact-container > a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: black;
+}
+
+#contact-container > a:hover {
+    color: lightblue;
+}
+
 #innerCarousel {
     width: 775px;
     margin-left: auto;

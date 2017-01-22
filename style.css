@@ -4,7 +4,7 @@
 }
 
 .code-banner {
-    border: 4px solid black;
+    
 }
 
 nav > a {
@@ -18,3 +18,13 @@ nav > a:hover {
     color: black;
 }
 
+.main-body-container {
+    height: 300px;
+    width: 800px;
+    border: 2px solid black;
+    
+}
+
+header {
+    height: 50px;
+}

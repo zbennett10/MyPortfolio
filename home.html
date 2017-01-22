@@ -108,6 +108,9 @@
             const portfolioContainer = document.querySelector('#portfolio-container');
             const contactContainer = document.querySelector('#contact-container');
             const mainContainer = document.querySelector('.main-body-container');
+            const icons = document.querySelectorAll('.fa');
+
+            
 
             window.addEventListener('load', function() {
                 bioContainer.style.display = 'block';
@@ -134,6 +137,8 @@
                 contactContainer.style.display = 'block';
                 mainContainer.appendChild(contactContainer);
             });
+
+            //icons.forEach(icon => icon.addEventListener('mouseout', fadeoutButton));
         </script>
     </body>
 </html>

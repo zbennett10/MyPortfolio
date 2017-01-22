@@ -59,6 +59,10 @@ header {
     color: lightblue;
 }
 
+.fa {
+    transition: all 1s;
+}
+
 .fa:hover{
     transition: all 1s;
     transform: scale(1.2);

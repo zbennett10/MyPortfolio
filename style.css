@@ -3,32 +3,34 @@
     width: 1000px;
 }
 
-.code-banner {
-    
-}
-
 nav > a {
     color: black;
     text-decoration: none;
+    margin-right: 2px;
+}
+
+nav {
+    margin-bottom: 25px;
 }
 
 nav > a:hover {
     text-decoration: none;
-    font-size: 14.5px;
     color: black;
+    opacity: .5;
 }
 
 .main-body-container {
     height: 375px;
     width: 800px;
-    border: 3px solid black;
-    border-radius: 10px;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
     position: relative;
     font-family: 'montserrat';
 }
 
 header {
     height: 50px;
+    margin-bottom: 25px;
 }
 
 #bio-container {

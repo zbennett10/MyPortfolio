@@ -45,8 +45,9 @@ function loadCodeGraphic() {
         codeGraphic.position.set(.5, -1.35, 0);
         scene.add(codeGraphic);
     });
-    setInterval(animateCode, 10);
     render();
+    setInterval(animateCode, 10);
+   
 }
 
 function letThereBeLight() {

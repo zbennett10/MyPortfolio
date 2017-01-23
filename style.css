@@ -73,6 +73,10 @@ header {
     transition: all .5s;
 }
 
+#portfolio-container {
+    display: none;
+}
+
 #innerCarousel {
     width: 795px;
     margin-left: auto;

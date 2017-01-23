@@ -30,7 +30,7 @@ function createCamera() {
 }
 
 function createRenderer() {
-    renderer = new THREE.WebGLRenderer({
+    renderer = new THREE.WebGLRenderer({ //renderer configured for white background
         antialias: true,
         alpha: true
     });
@@ -55,6 +55,7 @@ function letThereBeLight() {
     scene.add(lights);
 }
 
+//moves the 0's and 1's graphic down the screen 
 function animateCode() {
     codeGraphic.position.y -= 0.005;
      if(codeGraphic.position.y < -10.95) {

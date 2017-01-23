@@ -1,4 +1,3 @@
-
 //global configuration
 const holder = document.getElementById('canvasHolder');
 let codeGraphic, scene, camera, renderer, controls;
@@ -40,7 +39,7 @@ function createRenderer() {
 
 function loadCodeGraphic() {
     const loader = new THREE.JSONLoader();
-    loader.load("codeGraphic.json", function(geometry, materials) {
+    loader.load("scripts/codeGraphic.json", function(geometry, materials) {
         codeGraphic = new THREE.Mesh(geometry, new THREE.MultiMaterial(materials));
         codeGraphic.position.set(.5, -1.35, 0);
         scene.add(codeGraphic);
